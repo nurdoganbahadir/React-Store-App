@@ -3,6 +3,19 @@ import React, { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      email.toLowerCase() === "admin@aa.com" &&
+      pass.toLowerCase() === "admin"
+    ) {
+      console.log(email, pass);
+    } else {
+      alert("Kullanıcı bilgileri yanlış");
+    }
+  };
   return (
     <div className="loginDiv">
       <div className="h-[500px] w-11/12 sm:w-[475px] bg-white rounded-[20px] p-5 flex flex-col justify-center text-center">
@@ -18,7 +31,10 @@ const Login = () => {
             Enter your credentials to access your account
           </p>
         </div>
-        <form className="flex flex-col text-left p-3 gap-5">
+        <form
+          className="flex flex-col text-left p-3 gap-5"
+          onSubmit={handleSubmit}
+        >
           <div className="flex flex-col gap-2">
             <label
               htmlFor="email"
