@@ -16,7 +16,17 @@ const Login = () => {
             Enter your credentials to access your account
           </p>
         </div>
-        
+        <form className="flex flex-col text-left p-3 gap-5">
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="email"
+              className="font-montserrat text-label text-labelColor hover:after:content-['admin@aa.com'] hover:after:text-black hover:after:pl-3 hover:after:underline hover:cursor-pointer"
+            >
+              Email
+            </label>
+            <input type="email" className="login-input" />
+          </div>
+        </form>
       </div>
     </div>
   );

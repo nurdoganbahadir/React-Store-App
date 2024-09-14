@@ -7,4 +7,15 @@
     background: linear-gradient(71deg, #feaf00 19.35%, #f8d442 90.12%);
     @apply flex justify-center items-center min-h-screen;
   }
+  .login-input {
+    height: 44px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    padding: 0.6rem;
+    @apply focus:outline-main focus:caret-main;
+  }
+  .login-input::placeholder {
+    color: #cdcdcd;
+    @apply font-montserrat text-[12px] font-[400];
+  }
 }
