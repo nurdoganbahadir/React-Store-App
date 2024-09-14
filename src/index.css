@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .loginDiv {
+    background: linear-gradient(71deg, #feaf00 19.35%, #f8d442 90.12%);
+    @apply flex justify-center items-center min-h-screen;
+  }
+}
