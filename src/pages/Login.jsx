@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,7 +13,7 @@ const Login = () => {
       email.toLowerCase() === "admin@aa.com" &&
       pass.toLowerCase() === "admin"
     ) {
-      console.log(email, pass);
+      login({ email, pass });
     } else {
       alert("Kullanıcı bilgileri yanlış");
     }
