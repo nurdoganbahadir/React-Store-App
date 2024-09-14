@@ -24,7 +24,28 @@ const Login = () => {
             >
               Email
             </label>
-            <input type="email" className="login-input" />
+            <input
+              type="email"
+              className="login-input"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="password"
+              className="font-montserrat text-label text-labelColor hover:after:content-['admin'] hover:after:text-black hover:after:pl-3 hover:after:underline hover:cursor-pointer"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              className="login-input"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
           </div>
         </form>
       </div>
