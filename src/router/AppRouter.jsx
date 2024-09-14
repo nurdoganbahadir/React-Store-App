@@ -11,10 +11,10 @@ const AppRouter = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/dashboard" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard/" element={<Home />} />
+        <Route path="/dashboard/about" element={<About />} />
+        <Route path="/dashboard/products" element={<Products />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
