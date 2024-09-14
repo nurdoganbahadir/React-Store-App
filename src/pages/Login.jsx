@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
   return (
     <div className="loginDiv">
       <div className="h-[500px] w-11/12 sm:w-[475px] bg-white rounded-[20px] p-5 flex flex-col justify-center text-center">
@@ -30,6 +32,7 @@ const Login = () => {
               id="email"
               placeholder="Enter your email"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -45,20 +48,21 @@ const Login = () => {
               id="password"
               placeholder="Enter your password"
               required
+              onChange={(e) => setPass(e.target.value)}
             />
           </div>
+          <button className="bg-main h-[44px] font-montserrat text-label text-white hover:opacity-90 rounded-[4px]">
+            SIGN IN
+          </button>
+          <div className="flex justify-center items-center flex-wrap">
+            <span className="text-label font-montserrat font-[400] text-labelColor">
+              Forget your password?
+            </span>
+            <span className="text-main text-[14px] font-montserrat font-[500] underline ml-1">
+              Reset password
+            </span>
+          </div>
         </form>
-        <button className="bg-main h-[44px] font-montserrat text-label text-white hover:opacity-90 rounded-[4px]">
-          SIGN IN
-        </button>
-        <div className="flex justify-center items-center flex-wrap">
-          <span className="text-label font-montserrat font-[400] text-labelColor">
-            Forget your password?
-          </span>
-          <span className="text-main text-[14px] font-montserrat font-[500] underline ml-1">
-            Reset password
-          </span>
-        </div>
       </div>
     </div>
   );
