@@ -54,6 +54,7 @@ const Navbar = () => {
               <li
                 className="text-gray-700 font-medium flex justify-center"
                 key={item.title}
+                onClick={() => setShow(false)}
               >
                 <NavLink
                   className={`block hover:bg-main rounded-full py-2 px-4 hover:text-white ${
