@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const ProductContext = createContext();
-export const useProductContext = () => {
+
+export const useProductsContext = () => {
   return useContext(ProductContext);
 };
 

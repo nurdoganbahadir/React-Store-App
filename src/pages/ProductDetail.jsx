@@ -4,12 +4,11 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const ProductDetail = () => {
   const navigate = useNavigate();
-  // const { state } = useLocation();//? navigate ile taşınan veriyi useLocation() hooku ile karşılayabiliyoruz. urlde yer alan parametreleri search ile yakalayabiliyoruz.
 
   const [state, setState] = useState({});
 
   const { id } = useParams(); //* dinamik routelardaki parametreyi yakalar. route ayarlaması yaparken ne isim verdiysek useParams ile onu yakalarız.
-  // console.log(id);
+
 
   const getDetailData = async () => {
     try {
@@ -24,7 +23,7 @@ const ProductDetail = () => {
     getDetailData();
   }, []);
 
-  const { thumbnail, title, description, category, price, images } = state;
+  const { thumbnail, title, description, category, price, images} = state;
   return (
     <div className="mx-auto max-w-2xl px-4 pt-8 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <div className="mt-6 w-full ">

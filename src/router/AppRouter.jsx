@@ -10,8 +10,7 @@ import ProductDetail from "../pages/ProductDetail";
 
 const AppRouter = () => {
   return (
-    //* AuthProvider içinde react-router-dom'a ait yapıları kullanabilmek için index.js'e taşıdık
-    // <BrowserRouter>
+   
     <>
       {/* <Navbar /> */}
       <Routes>
@@ -20,15 +19,12 @@ const AppRouter = () => {
           <Route path="/dashboard" element={<Home />} />
           <Route path="/dashboard/products" element={<Products />} />
           <Route path="/dashboard/products/:id" element={<ProductDetail />} />
-          {/* //* Absolute path */}
           <Route path="/dashboard/about" element={<About />} />
-          {/* //* relative path */}
-          {/* <Route path="about" element={<About />} /> */}
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
-    // </BrowserRouter>
+    
   );
 };
 
