@@ -6,11 +6,14 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import AppRouter from "./router/AppRouter";
 import AuthProvider from "./context/AuthProvider";
+import ProductProvider from "./context/ProductProvider";
 
 function App() {
   return (
     <AuthProvider>
-      <AppRouter />
+      <ProductProvider>
+        <AppRouter />
+      </ProductProvider>
     </AuthProvider>
     //* route yapısını router dosyasına taşıdık
     // <BrowserRouter>

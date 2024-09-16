@@ -1,9 +1,29 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const ProductDetail = () => {
   const navigate = useNavigate();
-  const { state } = useLocation();
+  // const { state } = useLocation();//? navigate ile taşınan veriyi useLocation() hooku ile karşılayabiliyoruz. urlde yer alan parametreleri search ile yakalayabiliyoruz.
+
+  const [state, setState] = useState({});
+
+  const { id } = useParams(); //* dinamik routelardaki parametreyi yakalar. route ayarlaması yaparken ne isim verdiysek useParams ile onu yakalarız.
+  // console.log(id);
+
+  const getDetailData = async () => {
+    try {
+      const { data } = await axios.get(`https://dummyjson.com/products/${id}`);
+      setState(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getDetailData();
+  }, []);
+
   const { thumbnail, title, description, category, price, images } = state;
   return (
     <div className="mx-auto max-w-2xl px-4 pt-8 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -18,12 +38,12 @@ const ProductDetail = () => {
               />
             </div>
             <div className="grid grid-cols-3 gap-4 row-span-1">
-              {images.slice(0, 3).map((item, i) => (
+              {images?.slice(0, 3).map((item, i) => (
                 <div key={i}>
                   <img
                     className="h-[15vh] w-full rounded-lg"
                     src={item}
-                    alt={title}
+                    alt=""
                     loading="lazy"
                   />
                 </div>
@@ -38,9 +58,9 @@ const ProductDetail = () => {
             <div className="flex  mt-2 pt-3 ml-4 mr-2">
               <div className="">
                 <span className="block text-gray-900">
-                  Category : {category}
+                  Category : {category}{" "}
                 </span>
-                <span className="block  text-sm">Price : {price} $</span>
+                <span className="block  text-sm">Price : {price}$</span>
               </div>
             </div>
             <div className="flex justify-end gap-3 mt-4">
