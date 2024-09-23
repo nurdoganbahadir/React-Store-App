@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -11,17 +12,18 @@ const Login = () => {
     if (email.toLowerCase() === "admin@admin" && pass === "admin") {
       // console.log({ email, pass });
       login({ email, pass });
+      toastSuccessNotify("Kullanıcı girişi başarılı.")
     } else {
-      alert("Kullanıcı bilgileri yanlış");
+      toastErrorNotify("Kullanıcı bulunamadı!");
     }
   };
   return (
     <div className="loginDiv">
-      <div className="h-[500px] w-11/12 sm:w-[475px] bg-white rounded-[20px] p-5 flex flex-col justify-center text-center ">
+      <div className="h-[500px] w-11/12 sm:w-[475px] bg-gray-100 p-5 md:ml-12 flex flex-col justify-center text-center ">
         <div className="flex justify-center items-center mt-2 gap-2 ">
-          <span className="w-[6px] h-[39px] bg-yellow-500 "></span>
+          <span className="w-[6px] h-[39px] bg-red-500"></span>
           <h1 className="text-[22px] sm:text-[32px] font-montserrat font-[700] uppercase ">
-            Clarus Store
+            Bahadır Store
           </h1>
         </div>
         <div className="my-2">
@@ -66,14 +68,14 @@ const Login = () => {
               onChange={(e) => setPass(e.target.value)}
             />
           </div>
-          <button className="bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px] ">
+          <button className="bg-red-500 h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px] ">
             Sign In
           </button>
           <div className="flex justify-center items-center flex-wrap">
             <span className="text-label font-montserrat font-[500] text-labelColor">
               Forgot your password?
             </span>
-            <span className="text-main text-[14px] font-montserrat font-[500] underline ml-1 ">
+            <span className="text-black text-[14px] font-montserrat font-[500] underline ml-1 ">
               Reset password
             </span>
           </div>

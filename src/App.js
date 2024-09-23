@@ -7,6 +7,8 @@ import NotFound from "./pages/NotFound";
 import AppRouter from "./router/AppRouter";
 import AuthProvider from "./context/AuthProvider";
 import ProductProvider from "./context/ProductProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <ProductProvider>
         <AppRouter />
       </ProductProvider>
+      <ToastContainer />
     </AuthProvider>
     //* route yapısını router dosyasına taşıdık
     // <BrowserRouter>

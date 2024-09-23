@@ -4,8 +4,8 @@
 
 @layer components {
   .loginDiv {
-    background: linear-gradient(71deg, #feaf00 19.35%, #f8d442 90.12%);
-    @apply flex justify-center items-center min-h-screen;
+    background: linear-gradient(71deg, #fe004c 19.35%, #f86642 90.12%);
+    @apply flex justify-center md:justify-start items-center min-h-screen;
   }
   .login-input {
     height: 44px;
