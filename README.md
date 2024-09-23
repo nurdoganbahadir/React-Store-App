@@ -4,7 +4,7 @@ This application is developed with React. Hooks, context structures, react route
 
 # Live Link of the Project
 
-[Click Me]()
+[Click Me](https://store-app-nurdoganbahadir.netlify.app)
 
 # Libraries and Technologies I use
 
@@ -30,7 +30,6 @@ This will install the necessary dependencies. After that, you can run:
 
 
 
-
 # How does my project look
 
-![Todo App]()
+![Store App](./store.gif)
