@@ -3,7 +3,7 @@ import { team } from "../helper/data";
 
 const About = () => {
   return (
-    <section className="py-14">
+    <section className="py-14 bg-gray-200 h-[92vh]">
       <div className="max-w-screen-xl mx-auto px-4 text-center md:px-8">
         <div className="max-w-xl mx-auto">
           <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
@@ -15,7 +15,7 @@ const About = () => {
           </p>
         </div>
         <div className="mt-12">
-          <ul className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <ul className="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
             {team.map((item, idx) => (
               <li key={idx}>
                 <div className="w-24 h-24 mx-auto">
