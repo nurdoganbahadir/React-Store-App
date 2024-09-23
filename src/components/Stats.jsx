@@ -3,7 +3,7 @@ import { stats } from "../helper/data";
 
 const Stats = () => {
   return (
-    <section className="py-14">
+    <section className="py-14 bg-gray-200">
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
@@ -18,7 +18,7 @@ const Stats = () => {
           <ul className="flex flex-col items-center justify-center gap-y-10 sm:flex-row sm:flex-wrap lg:divide-x">
             {stats.map((item, idx) => (
               <li key={idx} className="text-center px-12 md:px-16">
-                <h4 className="text-4xl text-main font-semibold">
+                <h4 className="text-4xl text-red-500 font-semibold">
                   {item.data}
                 </h4>
                 <p className="mt-3 font-medium">{item.title}</p>
