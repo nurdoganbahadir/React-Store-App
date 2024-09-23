@@ -38,7 +38,7 @@ const Login = () => {
         >
           <div className="flex flex-col gap-2">
             <label
-              className="font-montserrat text-label text-labelColor hover:after:content-['admin@aa.com'] hover:after:text-black hover:after:pl-3 hover:after:underline hover:cursor-pointer "
+              className="font-montserrat text-label text-labelColor hover:after:content-['admin@admin'] hover:after:text-black hover:after:pl-3 hover:after:underline hover:cursor-pointer "
               htmlFor="email"
             >
               Email
